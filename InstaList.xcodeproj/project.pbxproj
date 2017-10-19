@@ -16,6 +16,8 @@
 		C03C565D1F9351F80096C6CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03C565B1F9351F80096C6CC /* LaunchScreen.storyboard */; };
 		C0454B851F9883B700D22210 /* FetchListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0454B841F9883B700D22210 /* FetchListService.swift */; };
 		C0454B881F988E3D00D22210 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0454B871F988E3D00D22210 /* Constants.swift */; };
+		C0A05B9D1F98BCD8001B07B7 /* NewsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A05B9C1F98BCD8001B07B7 /* NewsDataModel.swift */; };
+		C0A05B9F1F98CEF8001B07B7 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A05B9E1F98CEF8001B07B7 /* NewsFeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C03C565E1F9351F80096C6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0454B841F9883B700D22210 /* FetchListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListService.swift; sourceTree = "<group>"; };
 		C0454B871F988E3D00D22210 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C0A05B9C1F98BCD8001B07B7 /* NewsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataModel.swift; sourceTree = "<group>"; };
+		C0A05B9E1F98CEF8001B07B7 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		C03C564E1F9351F80096C6CC /* InstaList */ = {
 			isa = PBXGroup;
 			children = (
+				C0A05BA01F98D043001B07B7 /* TableViewCell */,
+				C0A05B9B1F98BCB8001B07B7 /* DataModel */,
 				C0454B861F988E2400D22210 /* Constants */,
 				C0454B831F98836C00D22210 /* NetworkService */,
 				C0454B821F9881AE00D22210 /* StoryBoard */,
@@ -134,6 +140,22 @@
 				C0454B871F988E3D00D22210 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		C0A05B9B1F98BCB8001B07B7 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0A05B9C1F98BCD8001B07B7 /* NewsDataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		C0A05BA01F98D043001B07B7 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0A05B9E1F98CEF8001B07B7 /* NewsFeedCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A05B9F1F98CEF8001B07B7 /* NewsFeedCell.swift in Sources */,
 				C0454B881F988E3D00D22210 /* Constants.swift in Sources */,
+				C0A05B9D1F98BCD8001B07B7 /* NewsDataModel.swift in Sources */,
 				C0454B851F9883B700D22210 /* FetchListService.swift in Sources */,
 				C03C56581F9351F80096C6CC /* InstaList.xcdatamodeld in Sources */,
 				C03C56521F9351F80096C6CC /* ViewController.swift in Sources */,

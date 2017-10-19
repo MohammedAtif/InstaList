@@ -13,7 +13,7 @@ import Alamofire
 
 protocol FetchListProtocol{
     init()
-    func getImagesList(url:String, requestType:Int, onComplete:(String, Int)->Void, onError:(Int)->Void) -> Void
+    func getNewsFeed(url:String, requestType:Int, onComplete:([NewsDataModel], Int)->Void, onError:(Int)->Void) -> Void
 }
 
 //MARK: Delegate Class
@@ -24,9 +24,9 @@ public class FetchList: FetchListProtocol {
         
     }
     
-    func getImagesList(url: String, requestType:Int, onComplete: (String, Int)->Void, onError:(Int)->Void) {
+    func getNewsFeed(url: String, requestType:Int, onComplete: ([NewsDataModel], Int)->Void, onError:(Int)->Void) {
         let result = Constants.Url.BASE_URL
-        onComplete(result, requestType)
+        onComplete([NewsDataModel(newsData: result)], requestType)
         onError(requestType)
     }
 }

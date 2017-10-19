@@ -12,4 +12,7 @@ public class Constants {
     public class Url {
         public static let BASE_URL = "https://test.com"
     }
+    public class Identifier {
+        public static let NEWS_FEED_CELL_ID = "news_feed_cell"
+    }
 }
