@@ -14,6 +14,8 @@
 		C03C56581F9351F80096C6CC /* InstaList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C03C56561F9351F80096C6CC /* InstaList.xcdatamodeld */; };
 		C03C565A1F9351F80096C6CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03C56591F9351F80096C6CC /* Assets.xcassets */; };
 		C03C565D1F9351F80096C6CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03C565B1F9351F80096C6CC /* LaunchScreen.storyboard */; };
+		C0454B851F9883B700D22210 /* FetchListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0454B841F9883B700D22210 /* FetchListService.swift */; };
+		C0454B881F988E3D00D22210 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0454B871F988E3D00D22210 /* Constants.swift */; };
 		C3C9095891E42D09F4F2295D /* Pods_InstaList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3868EFA5A446357129E6B7 /* Pods_InstaList.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		C03C56591F9351F80096C6CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C03C565C1F9351F80096C6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C03C565E1F9351F80096C6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0454B841F9883B700D22210 /* FetchListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListService.swift; sourceTree = "<group>"; };
+		C0454B871F988E3D00D22210 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		C03C564E1F9351F80096C6CC /* InstaList */ = {
 			isa = PBXGroup;
 			children = (
+				C0454B861F988E2400D22210 /* Constants */,
+				C0454B831F98836C00D22210 /* NetworkService */,
 				C0454B821F9881AE00D22210 /* StoryBoard */,
 				C0454B811F98819300D22210 /* AppDelegate */,
 				C0454B801F98817900D22210 /* ViewController */,
@@ -116,6 +122,22 @@
 				C03C56531F9351F80096C6CC /* Main.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		C0454B831F98836C00D22210 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				C0454B841F9883B700D22210 /* FetchListService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		C0454B861F988E2400D22210 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C0454B871F988E3D00D22210 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0454B881F988E3D00D22210 /* Constants.swift in Sources */,
+				C0454B851F9883B700D22210 /* FetchListService.swift in Sources */,
 				C03C56581F9351F80096C6CC /* InstaList.xcdatamodeld in Sources */,
 				C03C56521F9351F80096C6CC /* ViewController.swift in Sources */,
 				C03C56501F9351F80096C6CC /* AppDelegate.swift in Sources */,
