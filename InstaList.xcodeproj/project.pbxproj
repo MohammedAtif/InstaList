@@ -83,8 +83,6 @@
 		C03C564E1F9351F80096C6CC /* InstaList */ = {
 			isa = PBXGroup;
 			children = (
-				C03C565B1F9351F80096C6CC /* LaunchScreen.storyboard */,
-				C03C56531F9351F80096C6CC /* Main.storyboard */,
 				C0454B821F9881AE00D22210 /* StoryBoard */,
 				C0454B811F98819300D22210 /* AppDelegate */,
 				C0454B801F98817900D22210 /* ViewController */,
@@ -114,6 +112,8 @@
 		C0454B821F9881AE00D22210 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				C03C565B1F9351F80096C6CC /* LaunchScreen.storyboard */,
+				C03C56531F9351F80096C6CC /* Main.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
