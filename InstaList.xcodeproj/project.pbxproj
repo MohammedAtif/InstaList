@@ -18,6 +18,7 @@
 		C0454B881F988E3D00D22210 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0454B871F988E3D00D22210 /* Constants.swift */; };
 		C0A05B9D1F98BCD8001B07B7 /* NewsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A05B9C1F98BCD8001B07B7 /* NewsDataModel.swift */; };
 		C0A05B9F1F98CEF8001B07B7 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A05B9E1F98CEF8001B07B7 /* NewsFeedCell.swift */; };
+		C0F900141F9912E100A24318 /* SourceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F900131F9912E100A24318 /* SourceDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C0454B871F988E3D00D22210 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C0A05B9C1F98BCD8001B07B7 /* NewsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataModel.swift; sourceTree = "<group>"; };
 		C0A05B9E1F98CEF8001B07B7 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
+		C0F900131F9912E100A24318 /* SourceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C0A05B9C1F98BCD8001B07B7 /* NewsDataModel.swift */,
+				C0F900131F9912E100A24318 /* SourceDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				C0454B881F988E3D00D22210 /* Constants.swift in Sources */,
 				C0A05B9D1F98BCD8001B07B7 /* NewsDataModel.swift in Sources */,
 				C0454B851F9883B700D22210 /* FetchListService.swift in Sources */,
+				C0F900141F9912E100A24318 /* SourceDataModel.swift in Sources */,
 				C03C56581F9351F80096C6CC /* InstaList.xcdatamodeld in Sources */,
 				C03C56521F9351F80096C6CC /* ViewController.swift in Sources */,
 				C03C56501F9351F80096C6CC /* AppDelegate.swift in Sources */,

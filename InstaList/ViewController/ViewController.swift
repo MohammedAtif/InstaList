@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -67,8 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func updateNewsFeed() -> Void {
         fetchListService.getNewsFeed(
-            url: "Hello World",
-            requestType: 1,
+            url: Constants.Url.BASE_URL+Constants.Url.ARTICLES,
             onComplete: { (result, code) in
                 print(String(describing: result)+String(code))
                 self.newsFeed = result

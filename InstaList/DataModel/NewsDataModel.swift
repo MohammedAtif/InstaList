@@ -9,17 +9,18 @@
 import Foundation
 
 struct NewsDataModel {
-    var id: Int?
-    var name: String?
+    
+    var title: String?
+    var description: String?
     var author: String?
-    var url: String?
+    var added: String?
     
     init(newsData: Any) {
         if let jsonData = newsData as? [String: Any] {
-            id = jsonData["user_id"] as? Int
-            name = jsonData["name"] as? String
-            author = jsonData["author"] as? String
-            url = jsonData["author"] as? String
+            title = jsonData[Constants.JSONKey.TITLE] as? String
+            description = jsonData[Constants.JSONKey.DESCRIPTION] as? String
+            author = jsonData[Constants.JSONKey.AUTHOR] as? String
+            added = jsonData[Constants.JSONKey.PUBLISHED_AT] as? String
         }
     }
 }
