@@ -45,13 +45,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmk-hP-lPU">
                                                     <rect key="frame" x="8" y="62" width="359" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRG-gd-KW0">
                                                     <rect key="frame" x="8" y="87" width="359" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -80,7 +80,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News News Source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-fx-qvg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-fx-qvg">
                                 <rect key="frame" x="0.0" y="20" width="375" height="26"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="22"/>
@@ -88,20 +88,27 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZjH-gu-0Tn">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9xv-KV-Udl" firstAttribute="top" secondItem="pLd-fx-qvg" secondAttribute="bottom" id="09p-Ot-Xex"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9xv-KV-Udl" secondAttribute="bottom" id="80f-VB-SeV"/>
+                            <constraint firstItem="ZjH-gu-0Tn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AH3-zm-vZF"/>
                             <constraint firstAttribute="trailing" secondItem="pLd-fx-qvg" secondAttribute="trailing" id="ATf-hm-s0J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="pLd-fx-qvg" secondAttribute="bottom" constant="-26" id="E3J-Sx-GTM"/>
                             <constraint firstItem="9xv-KV-Udl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FNm-dH-Q4G"/>
+                            <constraint firstItem="ZjH-gu-0Tn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WBq-aJ-sHT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9xv-KV-Udl" secondAttribute="trailing" id="sUR-ak-ORp"/>
                             <constraint firstItem="pLd-fx-qvg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tzF-iV-91Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ZjH-gu-0Tn" id="3jH-cg-EHt"/>
                         <outlet property="newsFeedSource" destination="pLd-fx-qvg" id="3hE-Ec-Ikr"/>
                         <outlet property="newsFeedTableView" destination="9xv-KV-Udl" id="I6d-xL-pCV"/>
                     </connections>

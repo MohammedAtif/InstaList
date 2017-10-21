@@ -15,21 +15,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var newsFeedSource: UILabel!
     @IBOutlet weak var newsFeedTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: Variables
     
     let fetchListService: FetchList = FetchList()
     var newsFeed: [NewsDataModel]?
+    var newsSource: [SourceDataModel]?
+    var timer: Timer?
+    let REFRESH_TIME: TimeInterval = 10
+    var currentSourceIndex: Int = -1
+    var newsSourceCount: Int = 0
     
     //MARK: Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.stopAnimating()
         newsFeedTableView.delegate = self
         newsFeedTableView.dataSource = self
         newsFeedTableView.rowHeight = UITableViewAutomaticDimension
         newsFeedTableView.estimatedRowHeight = 44
-        updateNewsFeed()
+        getNewsFeedSource()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        stopNewsFeedRefresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,17 +84,59 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: Private Methods
     
-    func updateNewsFeed() -> Void {
+    func getNewsFeedSource() -> Void {
+        activityIndicator.startAnimating()
+        fetchListService.getNewsSource(
+            url: Constants.Url.BASE_URL+Constants.Url.SOURCES,
+            requestType: .get,
+            onComplete: { (result, code) in
+                print(String(describing: result)+String(code))
+                self.newsSource = result
+                self.newsSourceCount = result.count
+                self.startNewsFeedRefresh()
+                self.activityIndicator.stopAnimating()
+        },
+            onError: { (errorCode) in
+                print(String(errorCode))
+                self.activityIndicator.stopAnimating()
+        })
+    }
+    
+    @objc func updateNewsFeed() -> Void {
+        currentSourceIndex = (currentSourceIndex+1) % newsSourceCount
+        let sourceId = newsSource![currentSourceIndex].id
+        newsFeedSource.text = newsSource![currentSourceIndex].name
+        activityIndicator.startAnimating()
         fetchListService.getNewsFeed(
             url: Constants.Url.BASE_URL+Constants.Url.ARTICLES,
+            sourceId: sourceId!,
             onComplete: { (result, code) in
                 print(String(describing: result)+String(code))
                 self.newsFeed = result
                 self.newsFeedTableView.reloadData()
+                self.activityIndicator.stopAnimating()
         },
             onError: { (errorCode) in
                 print(String(errorCode))
+                self.activityIndicator.stopAnimating()
         })
+    }
+    
+    func startNewsFeedRefresh(){
+        updateNewsFeed()
+        self.timer = Timer.scheduledTimer(
+            timeInterval: REFRESH_TIME,
+            target: self,
+            selector: #selector(updateNewsFeed),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    func stopNewsFeedRefresh(){
+        if let timerToStop = self.timer {
+            timerToStop.invalidate()
+        }
     }
 }
 

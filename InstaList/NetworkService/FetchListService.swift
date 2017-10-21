@@ -12,18 +12,13 @@ import Alamofire
 //MARK: Protocol
 
 protocol FetchListProtocol{
-    init()
     func getNewsSource(url: String, requestType: HTTPMethod, onComplete: @escaping ([SourceDataModel], Int)->Void, onError: @escaping (Int)->Void)
-    func getNewsFeed(url:String, onComplete: @escaping ([NewsDataModel], Int)->Void, onError: @escaping (Int)->Void) -> Void
+    func getNewsFeed(url:String, sourceId: String, onComplete: @escaping ([NewsDataModel], Int)->Void, onError: @escaping (Int)->Void) -> Void
 }
 
 //MARK: Delegate Class
 
 public class FetchList: FetchListProtocol {
-    
-    required public init() {
-        //required empty initializer
-    }
     
     func getNewsSource(url: String, requestType: HTTPMethod, onComplete: @escaping ([SourceDataModel], Int)->Void, onError: @escaping (Int)->Void){
         Alamofire.request(url, method: requestType)
@@ -52,10 +47,10 @@ public class FetchList: FetchListProtocol {
         }
     }
     
-    func getNewsFeed(url: String, onComplete: @escaping ([NewsDataModel], Int)->Void, onError:@escaping (Int)->Void) {
+    func getNewsFeed(url: String, sourceId: String, onComplete: @escaping ([NewsDataModel], Int)->Void, onError:@escaping (Int)->Void) {
         
         let parameters: Parameters = [
-            "source": "abc-news-au",
+            "source": sourceId,
             Constants.API.API_KEY: Constants.API.KEY_VALUE
         ]
         
