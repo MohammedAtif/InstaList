@@ -11,6 +11,11 @@ class NewsFeedCell: UITableViewCell {
     
     //MARK: UI Binders
     
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var newsDescription: UILabel!
+    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var date: UILabel!
+    
     //MARK: Private Variables
     
     //MARK: Lifecycle Functions

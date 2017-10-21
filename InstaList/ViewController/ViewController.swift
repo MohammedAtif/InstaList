@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: UI Binder Methods
     
+    @IBOutlet weak var newsFeedSource: UILabel!
     @IBOutlet weak var newsFeedTableView: UITableView!
     
     //MARK: Variables
@@ -26,7 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         newsFeedTableView.delegate = self
         newsFeedTableView.dataSource = self
-        newsFeedTableView.rowHeight = 200
+        newsFeedTableView.rowHeight = UITableViewAutomaticDimension
+        newsFeedTableView.estimatedRowHeight = 44
         updateNewsFeed()
     }
 
@@ -44,6 +46,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ) as! NewsFeedCell
         if let feedData = self.newsFeed?[indexPath.row] {
             print(String(describing: feedData))
+            cell.title.text = feedData.title
+            cell.newsDescription.text = feedData.description
+            cell.author.text = feedData.author
+            cell.date.text = feedData.added
         }
         return cell
     }
@@ -54,6 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let newsItemList = newsFeed {
+            print("Table view count \(newsItemList.count)")
             return newsItemList.count
         }else{
             return 0
@@ -72,6 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             onComplete: { (result, code) in
                 print(String(describing: result)+String(code))
                 self.newsFeed = result
+                self.newsFeedTableView.reloadData()
         },
             onError: { (errorCode) in
                 print(String(errorCode))
